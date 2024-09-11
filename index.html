@@ -27,7 +27,7 @@
               window.URL.revokeObjectURL(SCRATCH_URL);
               const objectURL = window.URL.createObjectURL(blob);
               import(objectURL).then(scratch => {
-                  scratch.load(TARGET, { url: '/path/to/your/project.sb3' });
+                  scratch.load(TARGET, { url: '"/议会大厅.sb3"' });
               });
           });
     </script>
