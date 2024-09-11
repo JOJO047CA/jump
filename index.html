@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="target"></div>
-    <script>
+    <script type="module">
         // 加载 Scratch VM
         const SCRATCH_URL = 'https://cdn.jsdelivr.net/npm/@llk/scratch-vm@latest/dist/scratch-vm.js';
 
@@ -27,9 +27,13 @@
               window.URL.revokeObjectURL(SCRATCH_URL);
               const objectURL = window.URL.createObjectURL(blob);
               import(objectURL).then(scratch => {
-                  scratch.load(TARGET, { url: '"/议会大厅.sb3"' });
+                  scratch.load(document.getElementById('target'), { url: '"C:/Users/86135/Desktop/议会大厅.sb3"' });
               });
+          })
+          .catch(error => {
+              console.error('Failed to load Scratch VM:', error);
           });
     </script>
 </body>
 </html>
+
