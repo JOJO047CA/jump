@@ -19,7 +19,7 @@
     <div id="target"></div>
     <script type="module">
         // 加载 Scratch VM
-        const SCRATCH_URL = 'https://cdn.jsdelivr.net/npm/@llk/scratch-vm@latest/dist/scratch-vm.js';
+        const SCRATCH_URL = 'https://cdn.jsdelivr.net/npm/@llk/scratch-vm@latest/dist/scratch-vm.min.js';
 
         fetch(SCRATCH_URL)
           .then(response => response.blob())
@@ -27,7 +27,7 @@
               window.URL.revokeObjectURL(SCRATCH_URL);
               const objectURL = window.URL.createObjectURL(blob);
               import(objectURL).then(scratch => {
-                  scratch.load(document.getElementById('target'), { url: '"C:/Users/86135/Desktop/议会大厅.sb3"' });
+                  scratch.load(document.getElementById('target'), { url: '/议会大厅.sb3' });  // 替换为实际路径
               });
           })
           .catch(error => {
@@ -36,4 +36,3 @@
     </script>
 </body>
 </html>
-
