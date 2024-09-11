@@ -18,16 +18,16 @@
 <body>
     <div id="target"></div>
     <script>
-        const TARGET = document.getElementById('target');
+        // 加载 Scratch VM
         const SCRATCH_URL = 'https://cdn.jsdelivr.net/npm/@llk/scratch-vm@latest/dist/scratch-vm.js';
-        
+
         fetch(SCRATCH_URL)
           .then(response => response.blob())
           .then(blob => {
               window.URL.revokeObjectURL(SCRATCH_URL);
               const objectURL = window.URL.createObjectURL(blob);
               import(objectURL).then(scratch => {
-                  scratch.load(TARGET, { url: '"C:\Users\86135\Desktop\议会大厅.sb3"' });
+                  scratch.load(TARGET, { url: '/path/to/your/project.sb3' });
               });
           });
     </script>
